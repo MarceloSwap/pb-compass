@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-08-28T16:22:13.188688" rpa="false" schemaversion="5">
+<suite id="s1" name="UsandoLoops" source="C:\Users\marce\OneDrive\Documentos\PROJETOS\Estudo-Robotframeworks\ExemplosEstruturas\UsandoLoops.robot">
+<test id="s1-t1" name="Teste de Sair do FOR" line="25">
+<kw name="Usando FOR IN com EXIT FOR LOOP IF">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-28T16:22:13.229623" elapsed="0.000288"/>
+</kw>
+<for flavor="IN ENUMERATE">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Minha fruta é: ${INDICE} --&gt; ${FRUTA}!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-28T16:22:13.230281" elapsed="0.000285"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>'${FRUTA}'=='banana'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-28T16:22:13.230669" elapsed="0.000241"/>
+</kw>
+<var name="${INDICE}">0</var>
+<var name="${FRUTA}">maça</var>
+<status status="PASS" start="2025-08-28T16:22:13.230203" elapsed="0.000741"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Minha fruta é: ${INDICE} --&gt; ${FRUTA}!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-28T16:22:13.231116" elapsed="0.000296"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<arg>'${FRUTA}'=='banana'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-28T16:22:13.231513" elapsed="0.000204"/>
+</kw>
+<var name="${INDICE}">1</var>
+<var name="${FRUTA}">abacaxi</var>
+<status status="PASS" start="2025-08-28T16:22:13.231054" elapsed="0.000694"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Minha fruta é: ${INDICE} --&gt; ${FRUTA}!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-28T16:22:13.231895" elapsed="0.000230"/>
+</kw>
+<kw name="Exit For Loop If" owner="BuiltIn">
+<msg time="2025-08-28T16:22:13.232405" level="INFO">Exiting for loop altogether.</msg>
+<arg>'${FRUTA}'=='banana'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-28T16:22:13.232212" elapsed="0.000268"/>
+</kw>
+<var name="${INDICE}">2</var>
+<var name="${FRUTA}">banana</var>
+<status status="PASS" start="2025-08-28T16:22:13.231845" elapsed="0.000668"/>
+</iter>
+<var>${INDICE}</var>
+<var>${FRUTA}</var>
+<value>@{MINHA_LISTA_DE_FRUTAS}</value>
+<status status="PASS" start="2025-08-28T16:22:13.230018" elapsed="0.002530"/>
+</for>
+<status status="PASS" start="2025-08-28T16:22:13.229206" elapsed="0.003414"/>
+</kw>
+<doc>Você controla quando o FOR deve se encerrar antes de terminar todos os LOOPS</doc>
+<status status="PASS" start="2025-08-28T16:22:13.228357" elapsed="0.004500"/>
+</test>
+<doc>Vamos aprender a fazer LOOPS usando o Robot Framework!!</doc>
+<status status="PASS" start="2025-08-28T16:22:13.190574" elapsed="0.043234"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="UsandoLoops" id="s1" pass="1" fail="0" skip="0">UsandoLoops</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-28T16:22:13.180826" level="WARN">Error in file 'C:\Users\marce\OneDrive\Documentos\PROJETOS\Estudo-Robotframeworks\ExemplosEstruturas\UsandoLoops.robot' on line 8: Singular section headers like '*** Test Case ***' are deprecated. Use plural format like '*** Test Cases ***' instead.</msg>
+</errors>
+</robot>
