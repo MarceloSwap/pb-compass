@@ -44,6 +44,7 @@ Cenario: POST Realizar Login 200
 Cenario: POST Criar Produto 201
     [tags]    POSTPRODUTO
     Criar Sessao
+    Fazer Login e Armazenar Token
     POST Endpoint /produtos
     Validar Status Code "201"
  
@@ -51,14 +52,20 @@ Cenario: DELETE Excluir Produto 200
     [tags]    DELETE-PRODUTO
     Criar Sessao
     Fazer Login e Armazenar Token
-    Criar Um Produto e Armazenar ID
+    Criar Produto e Armazenar ID
     DELETE Endpoint /produtos
     Validar Status Code "200"
 
 Cenario: POST Criar Usuario de Massa Estatica 201
     [tags]    POST-CRIAR-USUARIO-ESTATICO
     Criar Sessao
-    Criar Usuario Estatico Valido
+    Cadastrar Usuario Estatico Valido
+    Validar Status Code "201"
+
+Cenario: POST Criar Usuario de Massa Estatica 201
+    [tags]    POST-CRIAR-USUARIO-DINAMICO
+    Criar Sessao
+    Cadastrar Usuario Dinamico Valido
     Validar Status Code "201"
 
 #Sessão para criação de Keywords Personalizadas

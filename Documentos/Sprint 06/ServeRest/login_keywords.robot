@@ -4,7 +4,7 @@ Library          RequestsLibrary
 Resource         common.robot
 
 *** Variables ***
-${email_para_loggin}        fulano@qa.com
+${email_para_loggin}       fulano@qa.com
 ${password_para_login}     teste
 
 
@@ -14,3 +14,14 @@ POST Endpoint /login
     ${response}    POST On Session    serverest    /login    data=${payload}
     Log To Console    Response: ${response.content}
     Set Global Variable    ${response}
+
+Validar Ter Logado
+    Should Be Equal        ${response.json()["message"]}        Login realizado com sucesso
+    Should Not Be Empty    ${response.json()["authorization"]}
+
+Fazer Login e Armazenar Token
+    POST Endpoint /login
+    Validar Ter Logado
+    ${token_auth}    Set Variable    ${response.json()["authorization"]}
+    Log To Console         Token Salvo: ${token_auth}
+    Set Global Variable    ${token_auth}

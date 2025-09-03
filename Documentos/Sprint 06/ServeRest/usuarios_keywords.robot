@@ -1,12 +1,13 @@
 *** Settings ***
-Documentation    Keywords e Variaveis para Ações do Endpoint do Usuarios
-Library          RequestsLibrary
-Resource         common.robot
+Documentation   Keywords e Variaveis para Ações do Endpoint do Usuarios
+Library         RequestsLibrary
+Resource        common.robot
+Resource        dynamics.robot
 
 *** Variables ***
-${username}      UserTest000
-${email}         usertest000@mail.com.br
-${password}      test000serverest
+${username}      UserTest002
+${email}         usertest002@mail.com.br
+${password}      test002serverest
 
 
 *** Keywords ***
@@ -44,10 +45,14 @@ Printar Conteudo Response
     #Log To Console    ${response.json()["usuarios"][0]["nome"]}
 
 # Usando JSON
-Criar Usuario Estatico Valido
+Cadastrar Usuario Estatico Valido
     ${json}                Importar JSON Estatico    json_usuario_ex.json    # qual arquivo json possui os objetos que eu preciso
     ${playload}            Set Variable    ${json['user_valido']}        # pega apenas o objeto 'user_valido'
     Set Global Variable    ${playload}                                   # Armazena em uma variável global pra ser usado
     POST Endpoint /usuarios
 
+Cadastrar Usuario Dinamico Valido
+    ${playload}            Criar Dados Usuarios Validos
+    Set Global Variable    ${playload}
+    POST Endpoint /usuarios
 

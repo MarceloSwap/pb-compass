@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-03T12:37:00.059098" rpa="false" schemaversion="5">
+<suite id="s1" name="Base" source="C:\Users\marce\OneDrive\Documentos\PROJETOS\pb-compass\Documentos\Sprint 06\ServeRest\base.robot">
+<test id="s1-t1" name="Cenario: POST Criar Usuario de Massa Estatica 201" line="65">
+<kw name="Criar Sessao">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-03T12:37:00.527313" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>serverest</arg>
+<arg>https://compassuol.serverest.dev</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-03T12:37:00.527198" elapsed="0.000348"/>
+</kw>
+<status status="PASS" start="2025-09-03T12:37:00.526258" elapsed="0.001363"/>
+</kw>
+<kw name="Cadastrar Usuario Dinamico Valido" owner="usuarios_keywords">
+<kw name="Criar Dados Usuarios Validos" owner="dynamics">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-09-03T12:37:00.529011" level="INFO">${nome} = David Brooks</msg>
+<var>${nome}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-09-03T12:37:00.528686" elapsed="0.000349"/>
+</kw>
+<kw name="Email" owner="FakerLibrary">
+<msg time="2025-09-03T12:37:00.529330" level="INFO">${email} = william24@example.org</msg>
+<var>${email}</var>
+<status status="PASS" start="2025-09-03T12:37:00.529114" elapsed="0.000236"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-09-03T12:37:00.529742" level="INFO">${playload} = {'nome': 'David Brooks', 'email': 'william24@example.org', 'password': 'senha123', 'administrador': 'true'}</msg>
+<var>${playload}</var>
+<arg>nome=${nome}</arg>
+<arg>email=${email}</arg>
+<arg>password=senha123</arg>
+<arg>administrador=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-09-03T12:37:00.529445" elapsed="0.000318"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${playload}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-03T12:37:00.529852" elapsed="0.000307"/>
+</kw>
+<return>
+<value>${playload}</value>
+<status status="PASS" start="2025-09-03T12:37:00.530202" elapsed="0.000040"/>
+</return>
+<msg time="2025-09-03T12:37:00.530346" level="INFO">${playload} = {'nome': 'David Brooks', 'email': 'william24@example.org', 'password': 'senha123', 'administrador': 'true'}</msg>
+<var>${playload}</var>
+<status status="PASS" start="2025-09-03T12:37:00.528492" elapsed="0.001873"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-09-03T12:37:00.530595" level="INFO">${playload} = {'nome': 'David Brooks', 'email': 'william24@example.org', 'password': 'senha123', 'administrador': 'true'}</msg>
+<arg>${playload}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-09-03T12:37:00.530450" elapsed="0.000174"/>
+</kw>
+<kw name="POST Endpoint /usuarios" owner="usuarios_keywords">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-09-03T12:37:01.098709" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '107', 'Content-Type': 'application/json'} 
+ body=b'{"nome": "David Brooks", "email": "william24@example.org", "password": "senha123", "administrador": "true"}' 
+ </msg>
+<msg time="2025-09-03T12:37:01.098945" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': 'a270157c2acad3d17f37943930517f11;o=1', 'date': 'Wed, 03 Sep 2025 15:37:06 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "thYYju0ulI2SQNyL"
+} 
+ </msg>
+<msg time="2025-09-03T12:37:01.099066" level="INFO">C:\Users\marce\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-09-03T12:37:01.099689" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/usuarios</arg>
+<arg>json=&amp;{playload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-09-03T12:37:00.530890" elapsed="0.568872"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-03T12:37:01.100051" elapsed="0.001114"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-09-03T12:37:01.101572" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-09-03T12:37:01.101351" elapsed="0.000261"/>
+</kw>
+<status status="PASS" start="2025-09-03T12:37:00.530729" elapsed="0.570944"/>
+</kw>
+<status status="PASS" start="2025-09-03T12:37:00.528037" elapsed="0.573677"/>
+</kw>
+<kw name="Validar Status Code &quot;201&quot;" owner="common" source_name="Validar Status Code &quot;${statuscode}&quot;">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response.status_code} == ${statuscode}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-03T12:37:01.102277" elapsed="0.000760"/>
+</kw>
+<status status="PASS" start="2025-09-03T12:37:01.102038" elapsed="0.001053"/>
+</kw>
+<tag>POST-CRIAR-USUARIO-DINAMICO</tag>
+<status status="PASS" start="2025-09-03T12:37:00.525271" elapsed="0.578204"/>
+</test>
+<doc>Arquivo base para estudo do Robotframeworks para teste de APIs</doc>
+<status status="PASS" start="2025-09-03T12:37:00.060573" elapsed="1.044220"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">POST-CRIAR-USUARIO-DINAMICO</stat>
+</tag>
+<suite>
+<stat name="Base" id="s1" pass="1" fail="0" skip="0">Base</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-09-03T12:37:00.208433" level="WARN">Error in file 'C:\Users\marce\OneDrive\Documentos\PROJETOS\pb-compass\Documentos\Sprint 06\ServeRest\common.robot' on line 18: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-09-03T12:37:00.219168" level="WARN">Error in file 'C:\Users\marce\OneDrive\Documentos\PROJETOS\pb-compass\Documentos\Sprint 06\ServeRest\dynamics.robot' on line 13: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

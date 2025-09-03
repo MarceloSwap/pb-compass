@@ -2,10 +2,11 @@
 Documentation            Keywords e Variaveis para Ações do Endpoint do Produto
 Library          RequestsLibrary
 Resource         common.robot
+Resource         login_keywords.robot
+
 
 *** Variables ***
-${token_auth}           Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzU2NjQ5MzIwLCJleHAiOjE3NTY2NDk5MjB9.05M-fva1zfh60pWIXVoYZzQIC3zy84DVD9BbZkXPbI0
-${nome_produto}         XP-PEN
+${nome_produto}         XP-PEN007
 ${preco_produto}        325
 ${descricao_produto}    Experiência natural com a caneta na tela: a tela usa a tecnologia de gravação AG
 ${qtd_produto}          5
@@ -17,3 +18,22 @@ POST Endpoint /produtos
     ${response}  POST On Session    serverest    /produtos    data=${payload}    headers=${header}
     Log To Console    Response: ${response.content}
     Set Global Variable    ${response}
+
+DELETE Endpoint /produtos
+    &{header}    Create Dictionary    Authorization=${token_auth}
+    ${response}  DELETE On Session    serverest    /produtos/${id_produto}    headers=${header}
+    Log To Console    Response: ${response.content}
+    Set Global Variable    ${response}
+
+
+
+Validar Ter Criado Produto
+    Should Be Equal        ${response.json()["message"]}        Cadastro realizado com sucesso
+    Should Not Be Empty    ${response.json()["_id"]}
+
+Criar Produto e Armazenar ID
+    POST Endpoint /produtos
+    Validar Ter Criado Produto
+    ${id_produto}    Set Variable    ${response.json()["_id"]}
+    Log To Console         Id do Produto Salvo: ${id_produto}
+    Set Global Variable    ${id_produto}
