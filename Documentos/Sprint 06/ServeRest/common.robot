@@ -3,11 +3,13 @@ Documentation    Keywords e Variaveis para Ações Gerais
 Library          OperatingSystem
 
 
+
 *** Variables ***
 
 *** Keywords ***
 Validar Status Code "${statuscode}"
-    Should Be True    ${response.status_code} == ${statuscode}
+    Should Be True    ${response.status_code} == ${statuscode}      # ← ${response} is undefined
+
 
 Importar JSON Estatico
     [Arguments]    ${nome_arquivo}
