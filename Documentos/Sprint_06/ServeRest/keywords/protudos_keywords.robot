@@ -1,8 +1,7 @@
 *** Settings ***
 Documentation            Keywords e Variaveis para Ações do Endpoint do Produto
-Library          RequestsLibrary
-Resource         common.robot
-Resource         login_keywords.robot
+Resource        ../suport/base.robot
+Resource        ./login_keywords.robot
 
 
 *** Variables ***
@@ -12,6 +11,8 @@ ${descricao_produto}    Experiência natural com a caneta na tela: a tela usa a 
 ${qtd_produto}          5
 
 *** Keywords ***
+
+# OBS - Devo tirar as essa playload fixa e fazer igual como tá na keyword de usuario de forma dinâmica
 POST Endpoint /produtos
     &{header}    Create Dictionary    Authorization=${token_auth}
     &{payload}   Create Dictionary    nome=${nome_produto}    preco=${preco_produto}    descricao=${descricao_produto}    quantidade=${qtd_produto}

@@ -1,12 +1,12 @@
 *** Settings ***
 Documentation            Keywords e Variaveis para Ações do Endpoint do Login
 Library          RequestsLibrary
-Resource         common.robot
+Resource         ../suport/common/common.robot
 
 *** Variables ***
 ${email_para_loggin}       fulano@qa.com
 ${password_para_login}     teste
-
+# OBS remover essas variáveis e usar o arquivo ServeRest\suport\fixtures\static\json_login_ex.json
 
 *** Keywords ***
 POST Endpoint /login
