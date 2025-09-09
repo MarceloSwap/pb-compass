@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-03T12:39:09.150818" rpa="false" schemaversion="5">
+<suite id="s1" name="Base" source="C:\Users\marce\OneDrive\Documentos\PROJETOS\pb-compass\Documentos\Sprint 06\ServeRest\base.robot">
+<test id="s1-t1" name="Cenario: POST Criar Usuario de Massa Estatica 201" line="59">
+<kw name="Criar Sessao">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-03T12:39:09.672019" level="INFO">Creating Session using : alias=serverest, url=https://compassuol.serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>serverest</arg>
+<arg>https://compassuol.serverest.dev</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-03T12:39:09.671889" elapsed="0.000326"/>
+</kw>
+<status status="PASS" start="2025-09-03T12:39:09.671025" elapsed="0.001269"/>
+</kw>
+<kw name="Cadastrar Usuario Estatico Valido" owner="usuarios_keywords">
+<kw name="Importar JSON Estatico" owner="common">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-09-03T12:39:09.673504" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\marce\OneDrive\Documentos\PROJETOS\pb-compass\Documentos\Sprint 06\ServeRest\json_usuario_ex.json"&gt;C:\Users\marce\OneDrive\Documentos\PROJETOS\pb-compass\Documentos\Sprint 06\ServeRest\json_usuario_ex.json&lt;/a&gt;'.</msg>
+<msg time="2025-09-03T12:39:09.686988" level="INFO">${arquivo} = {   
+    "user_valido":{
+        "nome": "Friedrich Nietzsche",
+        "email": "marcelofsano@gmail.com.br",
+        "password": "teste123",
+        "administrador": "true"
+    },
+    "user_invalido"...</msg>
+<var>${arquivo}</var>
+<arg>${EXECDIR}/${nome_arquivo}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-09-03T12:39:09.673355" elapsed="0.013700"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-09-03T12:39:09.687541" level="INFO">${dadosJson} = {'user_valido': {'nome': 'Friedrich Nietzsche', 'email': 'marcelofsano@gmail.com.br', 'password': 'teste123', 'administrador': 'true'}, 'user_invalido': {'nome': 'User Invalido', 'email': 'fulando@qa....</msg>
+<var>${dadosJson}</var>
+<arg>json.loads('''${arquivo}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-09-03T12:39:09.687248" elapsed="0.000314"/>
+</kw>
+<return>
+<value>${dadosJson}</value>
+<status status="PASS" start="2025-09-03T12:39:09.687609" elapsed="0.000044"/>
+</return>
+<msg time="2025-09-03T12:39:09.687761" level="INFO">${json} = {'user_valido': {'nome': 'Friedrich Nietzsche', 'email': 'marcelofsano@gmail.com.br', 'password': 'teste123', 'administrador': 'true'}, 'user_invalido': {'nome': 'User Invalido', 'email': 'fulando@qa....</msg>
+<var>${json}</var>
+<arg>json_usuario_ex.json</arg>
+<status status="PASS" start="2025-09-03T12:39:09.673163" elapsed="0.014617"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-09-03T12:39:09.688621" level="INFO">${playload} = {'nome': 'Friedrich Nietzsche', 'email': 'marcelofsano@gmail.com.br', 'password': 'teste123', 'administrador': 'true'}</msg>
+<var>${playload}</var>
+<arg>${json['user_valido']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-09-03T12:39:09.687868" elapsed="0.000819"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-09-03T12:39:09.689413" level="INFO">${playload} = {'nome': 'Friedrich Nietzsche', 'email': 'marcelofsano@gmail.com.br', 'password': 'teste123', 'administrador': 'true'}</msg>
+<arg>${playload}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-09-03T12:39:09.688998" elapsed="0.000449"/>
+</kw>
+<kw name="POST Endpoint /usuarios" owner="usuarios_keywords">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-09-03T12:39:10.303490" level="INFO">POST Request : url=https://compassuol.serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '118', 'Content-Type': 'application/json'} 
+ body=b'{"nome": "Friedrich Nietzsche", "email": "marcelofsano@gmail.com.br", "password": "teste123", "administrador": "true"}' 
+ </msg>
+<msg time="2025-09-03T12:39:10.303712" level="INFO">POST Response : url=https://compassuol.serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'x-cloud-trace-context': '5c8a0d1337ae253a528ee645d81496e0;o=1', 'date': 'Wed, 03 Sep 2025 15:39:15 GMT', 'server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "zZ7OGcIzGhiD4RrX"
+} 
+ </msg>
+<msg time="2025-09-03T12:39:10.303832" level="INFO">C:\Users\marce\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'compassuol.serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-09-03T12:39:10.304212" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/usuarios</arg>
+<arg>json=&amp;{playload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-09-03T12:39:09.689810" elapsed="0.614456"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-03T12:39:10.304497" elapsed="0.000896"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-09-03T12:39:10.306295" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-09-03T12:39:10.305839" elapsed="0.000611"/>
+</kw>
+<status status="PASS" start="2025-09-03T12:39:09.689605" elapsed="0.616974"/>
+</kw>
+<status status="PASS" start="2025-09-03T12:39:09.672801" elapsed="0.633832"/>
+</kw>
+<kw name="Validar Status Code &quot;201&quot;" owner="common" source_name="Validar Status Code &quot;${statuscode}&quot;">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response.status_code} == ${statuscode}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-09-03T12:39:10.307404" elapsed="0.000816"/>
+</kw>
+<status status="PASS" start="2025-09-03T12:39:10.307062" elapsed="0.001263"/>
+</kw>
+<tag>POST-CRIAR-USUARIO-ESTATICO</tag>
+<status status="PASS" start="2025-09-03T12:39:09.669952" elapsed="0.638690"/>
+</test>
+<doc>Arquivo base para estudo do Robotframeworks para teste de APIs</doc>
+<status status="PASS" start="2025-09-03T12:39:09.152396" elapsed="1.157068"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">POST-CRIAR-USUARIO-ESTATICO</stat>
+</tag>
+<suite>
+<stat name="Base" id="s1" pass="1" fail="0" skip="0">Base</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-09-03T12:39:09.325816" level="WARN">Error in file 'C:\Users\marce\OneDrive\Documentos\PROJETOS\pb-compass\Documentos\Sprint 06\ServeRest\common.robot' on line 18: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-09-03T12:39:09.338126" level="WARN">Error in file 'C:\Users\marce\OneDrive\Documentos\PROJETOS\pb-compass\Documentos\Sprint 06\ServeRest\dynamics.robot' on line 13: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
