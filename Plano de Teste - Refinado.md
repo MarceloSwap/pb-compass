@@ -38,7 +38,7 @@ Funcionalidades a serem testadas:
 - Token Bearer inválido ou sem expiração correta.
 - Exclusão de recursos vinculados (usuários/produtos com carrinho).
 
-## 7. Cenários de Teste Planejados (exemplo padronizado)
+## 7. Cenários de Teste Planejados
 
 | ID    | Cenário                                    | Pré-condição                  | Entrada                              | Resultado Esperado                              | Prioridade |
 |-------|--------------------------------------------|-------------------------------|--------------------------------------|------------------------------------------------|------------|
@@ -58,7 +58,7 @@ Funcionalidades a serem testadas:
 
 > Todos os cenários foram importados para o **QAlity (Jira)** para rastreabilidade.
 
-## 8. Matriz de Risco (resumida)
+## 8. Matriz de Risco
 
 | Risco                              | Probabilidade | Impacto | Nível  | Observação |
 |-----------------------------------|---------------|---------|--------|------------|

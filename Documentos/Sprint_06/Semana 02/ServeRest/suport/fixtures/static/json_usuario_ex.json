@@ -1,8 +1,8 @@
 {   
     "user_valido":{
-        "nome": "Friedrich Nietzsche 05",
-        "email": "marcelofs_05@gmail.com.br",
-        "password": "teste123",
+        "nome": "Friedrich Nietzsche",
+        "email": "ct001@mail.com.br",
+        "password": "testct001",
         "administrador": "true"
     },
     "user_invalido":{
