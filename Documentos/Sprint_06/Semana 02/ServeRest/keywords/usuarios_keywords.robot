@@ -7,7 +7,7 @@ GET Endpoint /usuarios
     ${response}    GET On Session    serverest    /usuarios
     Set Global Variable    ${response}
 
-POST Endpoint /usuarios 
+POST Endpoint /usuarios
     ${response}       POST On Session    serverest    /usuarios    json=&{playload}
     Log To Console    Response: ${response.content}
     Set Global Variable    ${response}
