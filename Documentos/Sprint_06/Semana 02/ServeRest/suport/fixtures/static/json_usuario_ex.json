@@ -1,0 +1,26 @@
+{   
+    "user_valido":{
+        "nome": "Friedrich Nietzsche",
+        "email": "ct001@mail.com.br",
+        "password": "testct001",
+        "administrador": "true"
+    },
+    "user_invalido":{
+        "nome": "User Invalido",
+        "email": "fulando@qa.com",
+        "password": "teste",
+        "administrador": "true"
+    },
+     "user_sem_senha":{
+        "nome": "Immanuel Kant",
+        "email": "kant@gmain.com",
+        "password": "",
+        "administrador": "true"
+    },
+        "user_sem_email":{
+        "nome": "Et Bilu",
+        "email": "",
+        "password": "teste123",
+        "administrador": "true"
+    }
+}
