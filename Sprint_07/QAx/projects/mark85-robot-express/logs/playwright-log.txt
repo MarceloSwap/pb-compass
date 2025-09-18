@@ -1,0 +1,46 @@
+{"level":30,"time":"2025-09-18T19:41:39.325Z","pid":2068,"hostname":"MarceloNote","msg":"Listening on 127.0.0.1:8118"}
+(node:2068) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-09-18T19:41:39.729Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-09-18T19:41:39.960Z","pid":2068,"hostname":"MarceloNote","msg":"Adding browser to stack: chromium, version: 140.0.7339.16"}
+{"level":30,"time":"2025-09-18T19:41:39.961Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-09-18T19:41:39.961Z","pid":2068,"hostname":"MarceloNote","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-09-18T19:41:39.976Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-09-18T19:41:39.977Z","pid":2068,"hostname":"MarceloNote","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@7014b260733255a328db34e12eed0455\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=49b1ff64-a210-4a95-bfa4-555241674ac8\"}"}
+{"level":30,"time":"2025-09-18T19:41:40.005Z","pid":2068,"hostname":"MarceloNote","msg":"Setting default timeout for context context=79b9230f-71e7-422e-b579-9862e813603f to 10000"}
+{"level":30,"time":"2025-09-18T19:41:40.005Z","pid":2068,"hostname":"MarceloNote","msg":"Changed active context: context=79b9230f-71e7-422e-b579-9862e813603f"}
+{"level":30,"time":"2025-09-18T19:41:40.166Z","pid":2068,"hostname":"MarceloNote","msg":"Video path: undefined"}
+{"level":30,"time":"2025-09-18T19:41:40.166Z","pid":2068,"hostname":"MarceloNote","msg":"Changed active page"}
+{"level":30,"time":"2025-09-18T19:41:41.084Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method newPage"}
+{"level":30,"time":"2025-09-18T19:41:41.090Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-09-18T19:41:41.091Z","pid":2068,"hostname":"MarceloNote","msg":"Strict mode is enabled, find Locator with xpath=//h1 in page."}
+{"level":30,"time":"2025-09-18T19:41:41.118Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-09-18T19:41:41.123Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method getText"}
+{"level":30,"time":"2025-09-18T19:41:41.123Z","pid":2068,"hostname":"MarceloNote","msg":"Strict mode is enabled, find Locator with xpath=//h1 in page."}
+{"level":30,"time":"2025-09-18T19:41:41.160Z","pid":2068,"hostname":"MarceloNote","msg":"Retrieved text for element xpath=//h1 containing Faça seu cadastro"}
+{"level":30,"time":"2025-09-18T19:41:41.161Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method getText"}
+{"level":30,"time":"2025-09-18T19:41:41.164Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-09-18T19:41:41.165Z","pid":2068,"hostname":"MarceloNote","msg":"Strict mode is enabled, find Locator with css=h1 in page."}
+{"level":30,"time":"2025-09-18T19:41:41.172Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-09-18T19:41:41.177Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method getText"}
+{"level":30,"time":"2025-09-18T19:41:41.178Z","pid":2068,"hostname":"MarceloNote","msg":"Strict mode is enabled, find Locator with css=h1 in page."}
+{"level":30,"time":"2025-09-18T19:41:41.197Z","pid":2068,"hostname":"MarceloNote","msg":"Retrieved text for element css=h1 containing Faça seu cadastro"}
+{"level":30,"time":"2025-09-18T19:41:41.197Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method getText"}
+{"level":30,"time":"2025-09-18T19:41:44.206Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.210Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.214Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.216Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.219Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.222Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.226Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.228Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.230Z","pid":2068,"hostname":"MarceloNote","msg":"Changed active context: context=79b9230f-71e7-422e-b579-9862e813603f"}
+{"level":30,"time":"2025-09-18T19:41:44.231Z","pid":2068,"hostname":"MarceloNote","msg":"Changing current active page: page=7ca1ff56-178a-4581-809b-e01f7ee3c98e"}
+{"level":30,"time":"2025-09-18T19:41:44.231Z","pid":2068,"hostname":"MarceloNote","msg":"Changed active page"}
+{"level":30,"time":"2025-09-18T19:41:44.235Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method closeContext"}
+{"level":30,"time":"2025-09-18T19:41:44.252Z","pid":2068,"hostname":"MarceloNote","msg":"Removed page=51ac0b09-1de3-4236-94cc-7a09d03419a4 from context=79b9230f-71e7-422e-b579-9862e813603f page stack"}
+{"level":30,"time":"2025-09-18T19:41:44.274Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method closeContext"}
+{"level":30,"time":"2025-09-18T19:41:44.282Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.282Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-18T19:41:44.328Z","pid":2068,"hostname":"MarceloNote","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-09-18T19:41:44.524Z","pid":2068,"hostname":"MarceloNote","msg":"End of node method closeAllBrowsers"}
