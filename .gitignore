@@ -1,0 +1,118 @@
+# ===================================
+# PB-COMPASS - Global .gitignore
+# ===================================
+
+# Dependencies
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/package-lock.json
+
+# Environment variables
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# Build outputs
+**/dist/
+**/build/
+**/coverage/
+**/reports/
+
+# Logs
+**/logs/
+**/*.log
+
+# Runtime data
+**/*.pid
+**/*.seed
+**/*.pid.lock
+
+# Test coverage
+**/.nyc_output
+**/coverage/
+**/*.lcov
+
+# Cache directories
+**/.cache/
+**/.parcel-cache/
+**/.npm/
+**/.eslintcache
+
+# Robot Framework
+**/reports/
+**/log.html
+**/output.xml
+**/report.html
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/*.pyo
+**/*.pyd
+**/.Python
+**/pip-log.txt
+**/pip-delete-this-directory.txt
+**/.pytest_cache/
+
+# Java
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/target/
+
+# Editor directories and files
+**/.idea/
+**/.vscode/
+**/*.swp
+**/*.swo
+**/*~
+
+# OS generated files
+**/.DS_Store
+**/.DS_Store?
+**/._*
+**/Thumbs.db
+**/ehthumbs.db
+
+# Windows
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+
+# Database files
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+
+# Certificates and keys
+**/*.pem
+**/*.key
+**/*.crt
+**/*.cert
+
+# Temporary folders
+**/tmp/
+**/temp/
+
+# Postman generated files
+**/newman/
+
+# Selenium
+**/selenium-debug.log
+**/geckodriver.log
+**/chromedriver.log
+
+# Mobile development
+**/platforms/
+**/plugins/
+**/www/
+
+# Specific to PB-COMPASS projects
+**/json_*.json
+**/dynamics_*.json
